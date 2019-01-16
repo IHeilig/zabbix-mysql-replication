@@ -2,6 +2,7 @@
 
 - Based on the official Zabbix MySQL template
 - Uses Zabbix agent user parameters (passive checks)
+- The "{$DB_NAME}" macro and "mysql.size[{$DB_NAME}]" key can be used to monitor all (or specific) DB size
 
 ## Configuration
 1. Install and configure Zabbix agent (https://www.zabbix.com/download)
