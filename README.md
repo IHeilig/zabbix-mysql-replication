@@ -51,3 +51,6 @@ zabbix_agentd -t "mysql.extended_status[Com_delete]"
 ```
 
 6. Import template, review and link it to a MySQL server
+
+7. Result
+![alt text](Screenshots/Latest data.png "Latest data")
