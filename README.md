@@ -40,7 +40,7 @@ UserParameter=mysql.extended_status[*],/usr/bin/mysqladmin --defaults-extra-file
 # Replication monitoring
 UserParameter=mysql.slave_lagging,/usr/bin/mysql --defaults-extra-file=/etc/mysql/debian.cnf -Bse "show slave status\\G" | grep Seconds_Behind_Master | awk '{print $$2}' | sed -e 's/^NULL$/-1/; s/![0-9]+/-1/' | awk '{if($2 ~ /d/) {print 100} else {print $2}}'
 
-UserParameter=mysql.slave_status[*],/usr/bin/mysql --defaults-extra-file=/etc/mysql/debian.cnf -e "show slave status\\G"|grep -i $1 | awk '{print $$2}'
+UserParameter=mysql.slave_status[*],/usr/bin/mysql --defaults-extra-file=/etc/mysql/debian.cnf -e "show slave status\\G"|grep -m 1 -i $1 | awk '{print $$2}'
 ```
 
 5. Restart Zabbix agent and test commands
